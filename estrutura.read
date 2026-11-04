@@ -1,0 +1,64 @@
+create database escola_projeto;
+use escola_projeto;
+
+create table alunos (
+	id_aluno int primary key auto_increment,
+    nome varchar(100) not null,
+    cpf varchar (20) unique not null,
+    data_nascimento date not null,
+    bairro varchar(50) not null,
+    rua_endereco varchar (200) not null,
+    telefone varchar(30),
+    email varchar (100) not null,
+    ativo boolean default true
+);
+
+create table professores (
+	id_professor int primary key auto_increment,
+    cpf varchar(100) not null unique,
+    nome varchar(100) not null,
+    especialidade varchar(100) not null,
+    email varchar(200) not null,
+    telefone varchar(100),
+    ativo boolean default true
+);
+
+create table disciplinas (
+	id_disciplina int primary key auto_increment,
+    nome_disciplina varchar(100) not null,
+    carga_horaria int 
+    
+);
+
+create table turmas(
+	id_turma int primary key auto_increment,
+    nome_turma varchar(10) not null,
+    ano_letivo int,
+    turno varchar(20)
+    
+);
+
+create table disciplina_professor(
+	id_professor int,
+    id_disciplina int,
+    primary key (id_professor, id_disciplina),
+    foreign key (id_professor) references professores (id_professor) on delete cascade,
+    foreign key (id_disciplina) references disciplinas (id_disciplina) on delete cascade
+    
+);
+
+create table turma_professor (
+	id_professor int,
+    id_turma int,
+	primary key (id_professor, id_turma),
+    foreign key (id_professor) references professores (id_professor) on delete cascade,
+    foreign key (id_turma) references turmas (id_turma) on delete cascade
+);
+
+create table turma_aluno (
+	id_aluno int,
+    id_turma int,
+    primary key (id_aluno, id_turma),
+    foreign key (id_aluno) references alunos (id_aluno) on delete cascade,
+    foreign key (id_turma) references turmas (id_turma) on delete cascade
+);
