@@ -47,12 +47,25 @@ create table disciplina_professor(
     
 );
 
-create table turma_professor (
-	id_professor int,
+create table turma_disciplina_professor (
     id_turma int,
-	primary key (id_professor, id_turma),
-    foreign key (id_professor) references professores (id_professor) on delete cascade,
-    foreign key (id_turma) references turmas (id_turma) on delete cascade
+    id_disciplina int,
+    id_professor int,
+
+    primary key (
+        id_turma,
+        id_disciplina,
+        id_professor
+    ),
+
+    foreign key (id_turma)
+        references turmas(id_turma) on delete cascade,
+
+    foreign key (id_disciplina)
+        references disciplinas(id_disciplina) on delete cascade,
+
+    foreign key (id_professor)
+        references professores(id_professor) on delete cascade
 );
 
 create table turma_aluno (
