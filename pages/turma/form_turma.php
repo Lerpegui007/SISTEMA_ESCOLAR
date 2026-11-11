@@ -10,7 +10,7 @@
 
     <h2>Cadastro de Turmas</h2>
 
-    <form action="cadastrar_turmas.php" method="POST">
+    <form action="turma_envio.php" method="POST">
 
         <label>Nome da turma:</label>
         <input type="text" name="nome_turma" required>
