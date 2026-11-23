@@ -132,7 +132,7 @@
 
         </div>
 
-       <!-- <h2>Relacionamentos</h2>
+        <h2>Relacionamentos</h2>
 
         <div class="container">
 
@@ -151,10 +151,10 @@
             <div class="card">
                 <h3>Matrícula de Alunos</h3>
                 <p>Vincule os alunos às suas respectivas turmas.</p>
-                <a href="turma_aluno.html">Acessar cadastro</a>
+                <a href="turma-aluno/form_turma-aluno.php">Acessar cadastro</a>
             </div>
 
-        </div> -->
+        </div> 
 
     </main>
 
