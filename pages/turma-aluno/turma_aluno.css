@@ -1,0 +1,108 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.descricao {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.campo {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: white;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #5555cc;
+}
+
+.resultados {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.opcao-aluno {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.opcao-aluno:hover {
+    background-color: #f0f0f0;
+}
+
+.selecionado {
+    margin-top: 10px;
+    color: #16803c;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 13px;
+    background-color: #3333aa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #25258a;
+}
+
