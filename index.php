@@ -1,1 +1,123 @@
-<?php include './pages/home.php'; ?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema Escolar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <button class="menu-btn" onclick="abrirMenu()">
+            ☰
+        </button>
+
+        <h2>Sistema Escolar</h2>
+
+        <p>Bem vindo ao meu projeto de gerenciamento escolar</p>
+
+    </header>
+
+
+    <!-- MENU LATERAL -->
+
+    <div class="sidebar" id="sidebar">
+
+        <h2>Menu</h2>
+
+        <a href="index.php">Início</a>
+
+        <a href="#">Meu Perfil</a>
+
+        <a href="pages/home.php">Cadastros</a>
+
+        <button class="submenu-btn" onclick="abrirRelacionamentos()">
+            Relacionamentos ▼
+        </button>
+
+        <div class="submenu" id="relacionamentos">
+
+            <a href="#">Professor e Disciplina</a>
+
+            <a href="#">Turma, Disciplina e Professor</a>
+
+            <a href="pages/turma-aluno/form_turma-aluno.php">Turma do Alunos</a>
+
+        </div>
+
+        <a href="#">Consultas</a>
+
+        <a href="#">Sair</a>
+
+    </div>
+
+
+    <!-- FUNDO DO MENU -->
+
+    <div class="overlay" id="overlay" onclick="fecharMenu()"></div>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <h1>Bem-vindo ao Sistema Escolar!</h1>
+
+        <p>
+            Utilize o menu lateral para navegar pelo sistema
+            e acessar suas funcionalidades.
+        </p>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>Sistema Escolar - Projeto em Desenvolvimento</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function abrirMenu() {
+
+            document.getElementById("sidebar").classList.add("aberto");
+
+            document.getElementById("overlay").classList.add("ativo");
+
+        }
+
+        function fecharMenu() {
+
+            document.getElementById("sidebar").classList.remove("aberto");
+
+            document.getElementById("overlay").classList.remove("ativo");
+
+        }
+
+        function abrirRelacionamentos() {
+
+            document.getElementById("relacionamentos").classList.toggle("ativo");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
