@@ -170,7 +170,7 @@
 
         <a href="home.php">Cadastros</a>
 
-        <a href="#">Consultas</a>
+        <a href="consulta.php">Consultas</a>
 
     </div>
 
