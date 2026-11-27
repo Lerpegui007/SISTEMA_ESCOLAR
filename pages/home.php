@@ -36,6 +36,65 @@
             margin-bottom: 15px;
         }
 
+        .menu-btn {
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -260px;
+            width: 260px;
+            height: 100%;
+            background-color: #243b55;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.aberto {
+            left: 0;
+        }
+
+        .sidebar h2 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #365d85;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 999;
+        }
+
+        #overlay.ativo {
+            display: block;
+        }
+
+
         .container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -98,7 +157,24 @@
     <header>
         <h1>Sistema Escolar</h1>
         <p>Gerenciamento de Cadastros Escolares</p>
+        <button class="menu-btn" onclick="abrirMenu()">
+            ☰
+        </button>
     </header>
+
+    <div class="sidebar" id="sidebar">
+
+        <h2>Menu</h2>
+
+        <a href="../index.php">Início</a>
+
+        <a href="home.php">Cadastros</a>
+
+        <a href="#">Consultas</a>
+
+    </div>
+
+    <div class="overlay" id="overlay" onclick="fecharMenu()"></div>
 
     <main>
 
@@ -139,13 +215,13 @@
             <div class="card">
                 <h3>Professor e Disciplina</h3>
                 <p>Vincule professores às disciplinas.</p>
-                <a href="disciplina_professor.html">Acessar cadastro</a>
+                <a href="professor-disciplina/form_prof-disci.php">Acessar cadastro</a>
             </div>
 
             <div class="card">
                 <h3>Turma, Disciplina e Professor</h3>
                 <p>Organize as disciplinas e professores de cada turma.</p>
-                <a href="turma_disciplina_professor.html">Acessar cadastro</a>
+                <a href="turma-professor-disciplina/form_turma-disciplina-professor.php">Acessar cadastro</a>
             </div>
 
             <div class="card">
@@ -161,6 +237,33 @@
     <footer>
         <p>Sistema Escolar - Projeto em Desenvolvimento por Lucas Emanuel</p>
     </footer>
+
+    <script>
+
+        function abrirMenu() {
+
+            document.getElementById("sidebar").classList.add("aberto");
+
+            document.getElementById("overlay").classList.add("ativo");
+
+        }
+
+        function fecharMenu() {
+
+            document.getElementById("sidebar").classList.remove("aberto");
+
+            document.getElementById("overlay").classList.remove("ativo");
+
+        }
+
+        function abrirRelacionamentos() {
+
+            document.getElementById("relacionamentos").classList.toggle("ativo");
+
+        }
+
+    </script>
+
 
 </body>
 </html>
